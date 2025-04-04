@@ -53,11 +53,11 @@
     </ProjectFileItem>
     <ProjectFileItem z:Id="i14">
       <IsMain>false</IsMain>
-      <Path>Framework\Excel\Excel.pix</Path>
+      <Path>Framework\Excel\Formulario.pix</Path>
     </ProjectFileItem>
     <ProjectFileItem z:Id="i15">
       <IsMain>false</IsMain>
-      <Path>Framework\Excel\Formulario.pix</Path>
+      <Path>Framework\Excel\DispatcherExcel.pix</Path>
     </ProjectFileItem>
   </Files>
   <MasterUploadId i:nil="true" />

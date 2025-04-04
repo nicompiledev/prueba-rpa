@@ -38,7 +38,7 @@
         </PropertyValues>
         <SelectedOptionId i:nil="true" />
         <AutoCloseMode>None</AutoCloseMode>
-        <EnableStatus>true</EnableStatus>
+        <EnableStatus>false</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
         <Text i:nil="true" />
@@ -77,13 +77,151 @@
         </PropertyValues>
         <SelectedOptionId i:nil="true" />
         <AutoCloseMode>None</AutoCloseMode>
-        <EnableStatus>true</EnableStatus>
+        <EnableStatus>false</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
         <Text i:nil="true" />
         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i11" i:type="CommentStep">
+      <AbstractStep z:Id="i11" i:type="ExecutedStep">
+        <Childs />
+        <Id>11c03289-87d4-49f5-a208-33d8854972f5</Id>
+        <Parent z:Ref="i2" />
+        <PropertyValues>
+          <PropertyValue z:Id="i12">
+            <PropertyName>Value</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>"Solicitud RPA recibida exitosamente"</_expression>
+            <_screenShotBase64 i:nil="true" />
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i13">
+            <PropertyName>To</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>AsuntoRespuesta</_expression>
+            <_screenShotBase64 i:nil="true" />
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+        </PropertyValues>
+        <SelectedOptionId i:nil="true" />
+        <AutoCloseMode>None</AutoCloseMode>
+        <EnableStatus>true</EnableStatus>
+        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+        <RetryCount>-1</RetryCount>
+        <Text>Definir asunto para responder email:</Text>
+        <_activityFullName>BR.Core.Base.Assign</_activityFullName>
+      </AbstractStep>
+      <AbstractStep z:Id="i14" i:type="ExecutedStep">
+        <Childs />
+        <Id>b06de017-3025-4d04-9a9c-a89a0a2de16b</Id>
+        <Parent z:Ref="i2" />
+        <PropertyValues>
+          <PropertyValue z:Id="i15">
+            <PropertyName>Value</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>"Nos complace informarle que su Solicitud RPA fue recibida satisfactoriamente por nuestro equipo, nos estaremos comunicando próximamente para mantenerlo al tanto del proceso. Cordial saludo."</_expression>
+            <_screenShotBase64 i:nil="true" />
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i16">
+            <PropertyName>To</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>CuerpoRespuesta</_expression>
+            <_screenShotBase64 i:nil="true" />
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+        </PropertyValues>
+        <SelectedOptionId i:nil="true" />
+        <AutoCloseMode>None</AutoCloseMode>
+        <EnableStatus>true</EnableStatus>
+        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+        <RetryCount>-1</RetryCount>
+        <Text>Definir el cuerpo para responder email:</Text>
+        <_activityFullName>BR.Core.Base.Assign</_activityFullName>
+      </AbstractStep>
+      <AbstractStep z:Id="i17" i:type="ExecutedStep">
+        <Childs />
+        <Id>64bc0b58-304b-48c4-8e62-3ecbebe6143c</Id>
+        <Parent z:Ref="i2" />
+        <PropertyValues>
+          <PropertyValue z:Id="i18">
+            <PropertyName>Body</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>CuerpoRespuesta</_expression>
+            <_screenShotBase64 i:nil="true" />
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i19">
+            <PropertyName>Subject</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>AsuntoRespuesta</_expression>
+            <_screenShotBase64 i:nil="true" />
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i20">
+            <PropertyName>Port</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>25</_expression>
+            <_screenShotBase64 i:nil="true" />
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i21">
+            <PropertyName>Server</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>"smtp.yandex.ru"</_expression>
+            <_screenShotBase64 i:nil="true" />
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i22">
+            <PropertyName>TimeoutMS</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>10000</_expression>
+            <_screenShotBase64 i:nil="true" />
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i23">
+            <PropertyName>Email</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>"Su e-mail"</_expression>
+            <_screenShotBase64 i:nil="true" />
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i24">
+            <PropertyName>Password</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>"Tu contraseña"</_expression>
+            <_screenShotBase64 i:nil="true" />
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i25">
+            <PropertyName>To</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>adress</_expression>
+            <_screenShotBase64 i:nil="true" />
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+        </PropertyValues>
+        <SelectedOptionId i:nil="true" />
+        <AutoCloseMode>None</AutoCloseMode>
+        <EnableStatus>true</EnableStatus>
+        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+        <RetryCount>-1</RetryCount>
+        <Text i:nil="true" />
+        <_activityFullName>Activities.Email.SendSMTPMailMessage</_activityFullName>
+      </AbstractStep>
+      <AbstractStep z:Id="i26" i:type="CommentStep">
         <Childs />
         <Id>99ba6525-82d0-4875-909e-adc085b51918</Id>
         <Parent z:Ref="i2" />
@@ -92,23 +230,23 @@
         <IsCollapsed>false</IsCollapsed>
         <Text>3) Recorrer la lista resultante</Text>
       </AbstractStep>
-      <AbstractStep z:Id="i12" i:type="ExecutedStep">
+      <AbstractStep z:Id="i27" i:type="ExecutedStep">
         <Childs>
-          <AbstractStep z:Id="i13" i:type="CommentStep">
+          <AbstractStep z:Id="i28" i:type="CommentStep">
             <Childs />
             <Id>29203c3a-727b-4848-bbe6-d2ea4ecd1a81</Id>
-            <Parent z:Ref="i12" />
+            <Parent z:Ref="i27" />
             <PropertyValues />
             <SelectedOptionId i:nil="true" />
             <IsCollapsed>false</IsCollapsed>
             <Text>4) Enviamos correo</Text>
           </AbstractStep>
-          <AbstractStep z:Id="i14" i:type="ExecutedStep">
+          <AbstractStep z:Id="i29" i:type="ExecutedStep">
             <Childs />
             <Id>6fa45666-0dd1-48f7-8ff0-3a9f9c5ba11f</Id>
-            <Parent z:Ref="i12" />
+            <Parent z:Ref="i27" />
             <PropertyValues>
-              <PropertyValue z:Id="i15">
+              <PropertyValue z:Id="i30">
                 <PropertyName>Body</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"Cuerpo"</_expression>
@@ -116,7 +254,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i16">
+              <PropertyValue z:Id="i31">
                 <PropertyName>Subject</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"Asunto de la carta"</_expression>
@@ -124,15 +262,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i17">
-                <PropertyName>IsBodyHtml</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>false</_expression>
-                <_screenShotBase64 i:nil="true" />
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i18">
+              <PropertyValue z:Id="i32">
                 <PropertyName>Port</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>25</_expression>
@@ -140,7 +270,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i19">
+              <PropertyValue z:Id="i33">
                 <PropertyName>Server</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"smtp.yandex.ru"</_expression>
@@ -148,7 +278,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i20">
+              <PropertyValue z:Id="i34">
                 <PropertyName>TimeoutMS</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>10000</_expression>
@@ -156,7 +286,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i21">
+              <PropertyValue z:Id="i35">
                 <PropertyName>Email</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"Su e-mail"</_expression>
@@ -164,7 +294,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i22">
+              <PropertyValue z:Id="i36">
                 <PropertyName>Password</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"Tu contraseña"</_expression>
@@ -172,7 +302,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i23">
+              <PropertyValue z:Id="i37">
                 <PropertyName>To</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>adress</_expression>
@@ -193,7 +323,7 @@
         <Id>f1c044a4-f3a3-48f4-8969-d57774d12830</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i24">
+          <PropertyValue z:Id="i38">
             <PropertyName>Collection</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>listOfEmails</_expression>
@@ -201,7 +331,7 @@
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i25">
+          <PropertyValue z:Id="i39">
             <PropertyName>Iterator</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>adress</_expression>
@@ -209,7 +339,7 @@
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i26">
+          <PropertyValue z:Id="i40">
             <PropertyName>Counter</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression></_expression>
@@ -240,7 +370,22 @@
   </Logic>
   <Name>EnviarEmail.pix</Name>
   <Namespaces xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <Params />
+  <Params>
+    <Parameter z:Id="i41">
+      <DefaultValueExpression></DefaultValueExpression>
+      <Description></Description>
+      <Name>Destinatario</Name>
+      <RunnerType>None</RunnerType>
+      <TypeString>System.String</TypeString>
+    </Parameter>
+    <Parameter z:Id="i42">
+      <DefaultValueExpression></DefaultValueExpression>
+      <Description></Description>
+      <Name>Config</Name>
+      <RunnerType>None</RunnerType>
+      <TypeString>System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</TypeString>
+    </Parameter>
+  </Params>
   <PlatformVersion xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
     <d2p1:_Build>0</d2p1:_Build>
     <d2p1:_Major>2</d2p1:_Major>

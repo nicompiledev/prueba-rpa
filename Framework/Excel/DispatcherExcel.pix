@@ -1020,7 +1020,7 @@
     {"NIT", Item["NIT"]},
     {"RAZON SOCIAL", Item["RAZON SOCIAL"]},
     {"SUPERVISOR", Item["SUPERVISOR"]},
-    {"REGIÓN", Item["REGIÓN"]},
+    {"REGION", Item["REGIÓN"]},
     {"DEPARTAMENTO", Item["DEPARTAMENTO"]}
 };</_expression>
                     <_screenShotBase64 i:nil="true" />
@@ -1052,7 +1052,7 @@
                   <PropertyValue z:Id="i106">
                     <PropertyName>QueueName</PropertyName>
                     <_dataType>Expression</_dataType>
-                    <_expression>"Prueba RPA"</_expression>
+                    <_expression>Config["QueueName"].ToString()</_expression>
                     <_screenShotBase64 i:nil="true" />
                     <_value i:nil="true" />
                     <_xpathSettings xmlns:d11p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
@@ -1073,24 +1073,18 @@
                     <_value i:nil="true" />
                     <_xpathSettings xmlns:d11p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                   </PropertyValue>
-                </PropertyValues>
-                <SelectedOptionId>0</SelectedOptionId>
-                <AutoCloseMode>None</AutoCloseMode>
-                <EnableStatus>true</EnableStatus>
-                <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-                <RetryCount>-1</RetryCount>
-                <Text>Enviar datos del item actual a la cola</Text>
-                <_activityFullName>Activities.Queues.PushElement</_activityFullName>
-              </AbstractStep>
-              <AbstractStep z:Id="i109" i:type="ExecutedStep">
-                <Childs />
-                <Id>9f9d3932-2a26-4451-8165-09047590a461</Id>
-                <Parent z:Ref="i101" />
-                <PropertyValues>
-                  <PropertyValue z:Id="i110">
-                    <PropertyName>Count</PropertyName>
+                  <PropertyValue z:Id="i109">
+                    <PropertyName>Reference</PropertyName>
                     <_dataType>Expression</_dataType>
-                    <_expression>1</_expression>
+                    <_expression>"Obtenido del archivo Excel"</_expression>
+                    <_screenShotBase64 i:nil="true" />
+                    <_value i:nil="true" />
+                    <_xpathSettings xmlns:d11p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                  </PropertyValue>
+                  <PropertyValue z:Id="i110">
+                    <PropertyName>QueueItemData</PropertyName>
+                    <_dataType>Expression</_dataType>
+                    <_expression>DatosCola</_expression>
                     <_screenShotBase64 i:nil="true" />
                     <_value i:nil="true" />
                     <_xpathSettings xmlns:d11p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
@@ -1101,6 +1095,28 @@
                 <EnableStatus>true</EnableStatus>
                 <ExceptionHandlingMode>Default</ExceptionHandlingMode>
                 <RetryCount>-1</RetryCount>
+                <Text>Enviar datos del item actual a la cola</Text>
+                <_activityFullName>Activities.Queues.PushElement</_activityFullName>
+              </AbstractStep>
+              <AbstractStep z:Id="i111" i:type="ExecutedStep">
+                <Childs />
+                <Id>9f9d3932-2a26-4451-8165-09047590a461</Id>
+                <Parent z:Ref="i101" />
+                <PropertyValues>
+                  <PropertyValue z:Id="i112">
+                    <PropertyName>Count</PropertyName>
+                    <_dataType>Expression</_dataType>
+                    <_expression>1</_expression>
+                    <_screenShotBase64 i:nil="true" />
+                    <_value i:nil="true" />
+                    <_xpathSettings xmlns:d11p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                  </PropertyValue>
+                </PropertyValues>
+                <SelectedOptionId>0</SelectedOptionId>
+                <AutoCloseMode>None</AutoCloseMode>
+                <EnableStatus>false</EnableStatus>
+                <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+                <RetryCount>-1</RetryCount>
                 <Text></Text>
                 <_activityFullName>BR.Core.Base.Sleep</_activityFullName>
               </AbstractStep>
@@ -1108,7 +1124,7 @@
             <Id>11c0b029-f57b-4e46-86a7-1339b696ffdc</Id>
             <Parent z:Ref="i81" />
             <PropertyValues>
-              <PropertyValue z:Id="i111">
+              <PropertyValue z:Id="i113">
                 <PropertyName>Collection</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>Filtrado.Rows</_expression>
@@ -1116,7 +1132,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i112">
+              <PropertyValue z:Id="i114">
                 <PropertyName>Iterator</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>Item</_expression>
@@ -1124,7 +1140,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i113">
+              <PropertyValue z:Id="i115">
                 <PropertyName>Counter</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>Count</_expression>
@@ -1141,12 +1157,12 @@
             <Text></Text>
             <_activityFullName>BR.Core.Base.LoopForEach</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i114" i:type="ExecutedStep">
+          <AbstractStep z:Id="i116" i:type="ExecutedStep">
             <Childs />
             <Id>41d2f1eb-4b50-45c1-b4d0-f6ae34a11e5f</Id>
             <Parent z:Ref="i81" />
             <PropertyValues>
-              <PropertyValue z:Id="i115">
+              <PropertyValue z:Id="i117">
                 <PropertyName>SheetName</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"Datos Filtrados"</_expression>
@@ -1154,7 +1170,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i116">
+              <PropertyValue z:Id="i118">
                 <PropertyName>FileName</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>RutaArchivo</_expression>
@@ -1171,12 +1187,12 @@
             <Text>Añadir nueva hoja para datos filtrados:</Text>
             <_activityFullName>Activities.Office.Excel.AddSheet</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i117" i:type="ExecutedStep">
+          <AbstractStep z:Id="i119" i:type="ExecutedStep">
             <Childs />
             <Id>cfb06f1d-8ffe-423b-aac6-7ce8d25f2256</Id>
             <Parent z:Ref="i81" />
             <PropertyValues>
-              <PropertyValue z:Id="i118">
+              <PropertyValue z:Id="i120">
                 <PropertyName>Value</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>Table.Rows.Count</_expression>
@@ -1184,7 +1200,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i119">
+              <PropertyValue z:Id="i121">
                 <PropertyName>To</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>TotalFilasBase</_expression>
@@ -1201,12 +1217,12 @@
             <Text>Definir total de filas en la tabla  original:</Text>
             <_activityFullName>BR.Core.Base.Assign</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i120" i:type="ExecutedStep">
+          <AbstractStep z:Id="i122" i:type="ExecutedStep">
             <Childs />
             <Id>d52ab22b-3b73-4fd8-8ae5-5420cf9019b7</Id>
             <Parent z:Ref="i81" />
             <PropertyValues>
-              <PropertyValue z:Id="i121">
+              <PropertyValue z:Id="i123">
                 <PropertyName>Value</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>Filtrado.Rows.Count + 1</_expression>
@@ -1214,7 +1230,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i122">
+              <PropertyValue z:Id="i124">
                 <PropertyName>To</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>LastRowFiltered</_expression>
@@ -1231,12 +1247,12 @@
             <Text>Definir posición última fila filtrada:</Text>
             <_activityFullName>BR.Core.Base.Assign</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i123" i:type="ExecutedStep">
+          <AbstractStep z:Id="i125" i:type="ExecutedStep">
             <Childs />
             <Id>40705e8f-23e6-40ad-8669-5ab614b4903a</Id>
             <Parent z:Ref="i81" />
             <PropertyValues>
-              <PropertyValue z:Id="i124">
+              <PropertyValue z:Id="i126">
                 <PropertyName>DataTable</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>Filtrado</_expression>
@@ -1244,7 +1260,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i125">
+              <PropertyValue z:Id="i127">
                 <PropertyName>SheetName</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"Datos Filtrados"</_expression>
@@ -1252,7 +1268,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i126">
+              <PropertyValue z:Id="i128">
                 <PropertyName>FileName</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>RutaArchivo</_expression>
@@ -1269,12 +1285,12 @@
             <Text>Añadir la tabla filtrada en la hoja creada para tal fin:</Text>
             <_activityFullName>Activities.Office.Excel.AppendRange</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i127" i:type="ExecutedStep">
+          <AbstractStep z:Id="i129" i:type="ExecutedStep">
             <Childs />
             <Id>ae4f97b2-fc8d-466c-af84-d6fa0bd6cc60</Id>
             <Parent z:Ref="i81" />
             <PropertyValues>
-              <PropertyValue z:Id="i128">
+              <PropertyValue z:Id="i130">
                 <PropertyName>Range</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"A1:F1"</_expression>
@@ -1282,7 +1298,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i129">
+              <PropertyValue z:Id="i131">
                 <PropertyName>CellsStyles</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>EstiloCabecera</_expression>
@@ -1290,7 +1306,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i130">
+              <PropertyValue z:Id="i132">
                 <PropertyName>SheetName</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>WorkSheet</_expression>
@@ -1298,7 +1314,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i131">
+              <PropertyValue z:Id="i133">
                 <PropertyName>FileName</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>RutaArchivo</_expression>
@@ -1306,7 +1322,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i132">
+              <PropertyValue z:Id="i134">
                 <PropertyName>CellStyles</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>EstiloCabecera</_expression>
@@ -1317,18 +1333,18 @@
             </PropertyValues>
             <SelectedOptionId>0</SelectedOptionId>
             <AutoCloseMode>None</AutoCloseMode>
-            <EnableStatus>true</EnableStatus>
+            <EnableStatus>false</EnableStatus>
             <ExceptionHandlingMode>Default</ExceptionHandlingMode>
             <RetryCount>-1</RetryCount>
             <Text>Leer estilo cabecera de la hoja original:</Text>
             <_activityFullName>Activities.Office.Excel.ReadFormat</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i133" i:type="ExecutedStep">
+          <AbstractStep z:Id="i135" i:type="ExecutedStep">
             <Childs />
             <Id>99d28546-d154-4f1b-9811-937fa9baa0f3</Id>
             <Parent z:Ref="i81" />
             <PropertyValues>
-              <PropertyValue z:Id="i134">
+              <PropertyValue z:Id="i136">
                 <PropertyName>Cell</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"A2"</_expression>
@@ -1336,7 +1352,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i135">
+              <PropertyValue z:Id="i137">
                 <PropertyName>CellStyles</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>EstiloFila</_expression>
@@ -1344,7 +1360,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i136">
+              <PropertyValue z:Id="i138">
                 <PropertyName>SheetName</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>WorkSheet</_expression>
@@ -1352,7 +1368,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i137">
+              <PropertyValue z:Id="i139">
                 <PropertyName>FileName</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>RutaArchivo</_expression>
@@ -1360,7 +1376,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i138">
+              <PropertyValue z:Id="i140">
                 <PropertyName>Range</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>""</_expression>
@@ -1368,7 +1384,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i139">
+              <PropertyValue z:Id="i141">
                 <PropertyName>CellsStyles</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>EstiloFila</_expression>
@@ -1379,18 +1395,18 @@
             </PropertyValues>
             <SelectedOptionId>0</SelectedOptionId>
             <AutoCloseMode>None</AutoCloseMode>
-            <EnableStatus>true</EnableStatus>
+            <EnableStatus>false</EnableStatus>
             <ExceptionHandlingMode>Default</ExceptionHandlingMode>
             <RetryCount>-1</RetryCount>
             <Text>Leer estilo fila de la hoja original:</Text>
             <_activityFullName>Activities.Office.Excel.ReadFormat</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i140" i:type="ExecutedStep">
+          <AbstractStep z:Id="i142" i:type="ExecutedStep">
             <Childs />
             <Id>ceaa14de-7c1f-484d-b375-2ec17282a076</Id>
             <Parent z:Ref="i81" />
             <PropertyValues>
-              <PropertyValue z:Id="i141">
+              <PropertyValue z:Id="i143">
                 <PropertyName>Range</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"A1:F"+Filtrado.Columns.Count</_expression>
@@ -1398,7 +1414,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i142">
+              <PropertyValue z:Id="i144">
                 <PropertyName>CellProperties</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>EstiloCabecera</_expression>
@@ -1406,7 +1422,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i143">
+              <PropertyValue z:Id="i145">
                 <PropertyName>SheetName</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"Datos Filtrados"</_expression>
@@ -1414,7 +1430,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i144">
+              <PropertyValue z:Id="i146">
                 <PropertyName>FileName</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>RutaArchivo</_expression>
@@ -1425,18 +1441,18 @@
             </PropertyValues>
             <SelectedOptionId i:nil="true" />
             <AutoCloseMode>None</AutoCloseMode>
-            <EnableStatus>true</EnableStatus>
+            <EnableStatus>false</EnableStatus>
             <ExceptionHandlingMode>Default</ExceptionHandlingMode>
             <RetryCount>-1</RetryCount>
             <Text>Establecer el estilo cabecera en la nueva hoja:</Text>
             <_activityFullName>Activities.Office.Excel.SetFormat</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i145" i:type="ExecutedStep">
+          <AbstractStep z:Id="i147" i:type="ExecutedStep">
             <Childs />
             <Id>e2f39a0d-27f5-469e-b4a9-5b7e2c3abe14</Id>
             <Parent z:Ref="i81" />
             <PropertyValues>
-              <PropertyValue z:Id="i146">
+              <PropertyValue z:Id="i148">
                 <PropertyName>Range</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"A2:F" + Filtrado.Rows.Count</_expression>
@@ -1444,7 +1460,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i147">
+              <PropertyValue z:Id="i149">
                 <PropertyName>CellProperties</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>EstiloFila</_expression>
@@ -1452,7 +1468,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i148">
+              <PropertyValue z:Id="i150">
                 <PropertyName>SheetName</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"Datos Filtrados"</_expression>
@@ -1460,7 +1476,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i149">
+              <PropertyValue z:Id="i151">
                 <PropertyName>FileName</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>RutaArchivo</_expression>
@@ -1471,13 +1487,13 @@
             </PropertyValues>
             <SelectedOptionId i:nil="true" />
             <AutoCloseMode>None</AutoCloseMode>
-            <EnableStatus>true</EnableStatus>
+            <EnableStatus>false</EnableStatus>
             <ExceptionHandlingMode>Default</ExceptionHandlingMode>
             <RetryCount>-1</RetryCount>
             <Text>Establecer el estilo fila en la nueva hoja:</Text>
             <_activityFullName>Activities.Office.Excel.SetFormat</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i150" i:type="CommentStep">
+          <AbstractStep z:Id="i152" i:type="CommentStep">
             <Childs />
             <Id>68333163-93b3-4856-8837-cb41c70d62c0</Id>
             <Parent z:Ref="i81" />
@@ -1486,12 +1502,12 @@
             <IsCollapsed>false</IsCollapsed>
             <Text>Aplicar un color de fondo a las filas filtradas donde "DEPARTAMENTO" = "ANTIOQUIA".</Text>
           </AbstractStep>
-          <AbstractStep z:Id="i151" i:type="ExecutedStep">
+          <AbstractStep z:Id="i153" i:type="ExecutedStep">
             <Childs />
             <Id>cf2af151-2765-4f74-80a1-8c911abec2ba</Id>
             <Parent z:Ref="i81" />
             <PropertyValues>
-              <PropertyValue z:Id="i152">
+              <PropertyValue z:Id="i154">
                 <PropertyName>Color</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"yellow"</_expression>
@@ -1499,7 +1515,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i153">
+              <PropertyValue z:Id="i155">
                 <PropertyName>Range</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"A2:F"+LastRowFiltered</_expression>
@@ -1507,7 +1523,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i154">
+              <PropertyValue z:Id="i156">
                 <PropertyName>SheetName</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"Datos Filtrados"</_expression>
@@ -1515,7 +1531,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i155">
+              <PropertyValue z:Id="i157">
                 <PropertyName>FileName</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>RutaArchivo</_expression>
@@ -1526,18 +1542,18 @@
             </PropertyValues>
             <SelectedOptionId>0</SelectedOptionId>
             <AutoCloseMode>None</AutoCloseMode>
-            <EnableStatus>true</EnableStatus>
+            <EnableStatus>false</EnableStatus>
             <ExceptionHandlingMode>Default</ExceptionHandlingMode>
             <RetryCount>-1</RetryCount>
             <Text>Aplicar color de fondo a las filas con la información filtrada:</Text>
             <_activityFullName>Activities.Office.Excel.SetColor</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i156" i:type="ExecutedStep">
+          <AbstractStep z:Id="i158" i:type="ExecutedStep">
             <Childs />
             <Id>d85c3cf0-eb2c-44d3-a558-cb14aff56980</Id>
             <Parent z:Ref="i81" />
             <PropertyValues>
-              <PropertyValue z:Id="i157">
+              <PropertyValue z:Id="i159">
                 <PropertyName>Count</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>3</_expression>
@@ -1548,13 +1564,13 @@
             </PropertyValues>
             <SelectedOptionId>0</SelectedOptionId>
             <AutoCloseMode>None</AutoCloseMode>
-            <EnableStatus>true</EnableStatus>
+            <EnableStatus>false</EnableStatus>
             <ExceptionHandlingMode>Default</ExceptionHandlingMode>
             <RetryCount>-1</RetryCount>
             <Text></Text>
             <_activityFullName>BR.Core.Base.Sleep</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i158" i:type="CommentStep">
+          <AbstractStep z:Id="i160" i:type="CommentStep">
             <Childs />
             <Id>4fcc6e6a-f804-4e85-9720-05895d75d023</Id>
             <Parent z:Ref="i81" />
@@ -1563,12 +1579,12 @@
             <IsCollapsed>false</IsCollapsed>
             <Text>Transferir la información filtrada a un formulario web, en este caso se definió un formulario de Google para recolectar la información filtrada.</Text>
           </AbstractStep>
-          <AbstractStep z:Id="i159" i:type="ExecutedStep">
+          <AbstractStep z:Id="i161" i:type="ExecutedStep">
             <Childs />
             <Id>175f1a11-1a5b-4fce-bb1e-da7199f1d2cd</Id>
             <Parent z:Ref="i81" />
             <PropertyValues>
-              <PropertyValue z:Id="i160">
+              <PropertyValue z:Id="i162">
                 <PropertyName>FilePath</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>@"Excel\Formulario.pix"</_expression>
@@ -1576,13 +1592,13 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i161">
+              <PropertyValue z:Id="i163">
                 <PropertyName>Parameters</PropertyName>
                 <_dataType>Value</_dataType>
                 <_expression i:nil="true" />
                 <_screenShotBase64 i:nil="true" />
                 <_value xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.Core" i:type="d9p1:ArrayOfArgumentItem">
-                  <d9p1:ArgumentItem z:Id="i162">
+                  <d9p1:ArgumentItem z:Id="i164">
                     <d9p1:ArgumentName>DatosFiltrados</d9p1:ArgumentName>
                     <d9p1:Expression>Filtrado</d9p1:Expression>
                     <d9p1:Type>System.Data.DataTable</d9p1:Type>
@@ -1593,7 +1609,7 @@
             </PropertyValues>
             <SelectedOptionId i:nil="true" />
             <AutoCloseMode>None</AutoCloseMode>
-            <EnableStatus>true</EnableStatus>
+            <EnableStatus>false</EnableStatus>
             <ExceptionHandlingMode>Default</ExceptionHandlingMode>
             <RetryCount>-1</RetryCount>
             <Text>Ejecutar el script que registra la info en el formulario:</Text>
@@ -1623,9 +1639,17 @@
     <Text></Text>
     <_activityFullName>BR.Core.Base.Container</_activityFullName>
   </Logic>
-  <Name>Excel.pix</Name>
+  <Name>DispatcherExcel.pix</Name>
   <Namespaces xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <Params />
+  <Params>
+    <Parameter z:Id="i165">
+      <DefaultValueExpression></DefaultValueExpression>
+      <Description></Description>
+      <Name>Config</Name>
+      <RunnerType>None</RunnerType>
+      <TypeString>System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</TypeString>
+    </Parameter>
+  </Params>
   <PlatformVersion xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
     <d2p1:_Build>0</d2p1:_Build>
     <d2p1:_Major>2</d2p1:_Major>
